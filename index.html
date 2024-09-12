@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tower of Hanoi</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      #board {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+      }
+      .peg {
+        margin: 0 20px;
+        position: relative;
+      }
+      .peg::before {
+        content: '';
+        display: block;
+        width: 10px;
+        height: 100px;
+        background: #333;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .disc {
+        width: 60px;
+        height: 20px;
+        background: #666;
+        margin: 5px 0;
+        color: white;
+        text-align: center;
+        line-height: 20px;
+        border-radius: 5px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      #controls {
+        margin: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tower of Hanoi</h1>
+    <div id="board">
+      <div class="peg" id="peg0"></div>
+      <div class="peg" id="peg1"></div>
+      <div class="peg" id="peg2"></div>
+    </div>
+    <div id="controls">
+      <button onclick="moveDisc(0, 1)">Move from Peg 0 to Peg 1</button>
+      <button onclick="moveDisc(0, 2)">Move from Peg 0 to Peg 2</button>
+      <button onclick="moveDisc(1, 2)">Move from Peg 1 to Peg 2</button>
+      <button onclick="moveDisc(1, 0)">Move from Peg 1 to Peg 0</button>
+      <button onclick="moveDisc(2, 0)">Move from Peg 2 to Peg 0</button>
+      <button onclick="moveDisc(2, 1)">Move from Peg 2 to Peg 1</button>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
